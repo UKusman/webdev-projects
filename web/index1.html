@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clock</title>
+    <style>
+        :root {
+            --main: blueviolet;
+            --white: #ffffff;
+        }
+
+        .container {
+            border: 10px solid black;
+            width: 600px;
+            height: 600px;
+            background-color: var(--main);
+            border-radius: 50%;
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: none;
+        }
+
+        .num {
+            position: absolute;
+            font-size: 2rem;
+            color: rgb(255, 255, 255);
+            font-size: 80px;
+        }
+
+        .num:nth-child(1) { top: 50px; left: 70%; }
+        .num:nth-child(2) { top: 130px; left: 85%; }
+        .num:nth-child(3) { top: 50%; left: 90%; transform: translate(-50%, -50%); }
+        .num:nth-child(4) { bottom: 130px; left: 85%; }
+        .num:nth-child(5) { bottom: 50px; left: 70%; }
+        .num:nth-child(6) { bottom: 20px; left: 50%; transform: translateX(-50%); }
+        .num:nth-child(7) { bottom: 50px; left: 30%; }
+        .num:nth-child(8) { bottom: 130px; left: 15%; }
+        .num:nth-child(9) { top: 50%; left: 10%; transform: translate(-50%, -50%); }
+        .num:nth-child(10) { top: 130px; left: 11%; }
+        .num:nth-child(11) { top: 45px; left: 25%; }
+        .num:nth-child(12) { top: 20px; left: 50%; transform: translateX(-50%); }
+        .sec {
+            width: 4px;
+            height: 290px;
+            position: absolute;
+            top: 5%;
+            left: 50%;
+            background-color: black;
+            transform-origin: bottom;
+            animation: secclock 60s linear infinite;
+        }
+
+        .minute {
+            width: 6px;
+            height: 240px;
+            position: absolute;
+            top: 15%;
+            left: 50%;
+            background-color: black;
+            transform-origin: bottom;
+            animation: minclock 3600s linear infinite;
+        }
+
+        .hour {
+            width: 8px;
+            height: 160px;
+            position: absolute;
+            top: 25%;
+            left: 50%;
+            background-color: black;
+            transform-origin: bottom;
+            animation: hourclock 43200s linear infinite;
+        }
+
+        @keyframes secclock {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes minclock {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        @keyframes hourclock {
+            from {
+                transform: rotate(0deg);
+            }
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        .dot {
+            background-color: black;
+            width: 20px;
+            height: 20px;
+            border-radius: 50%;
+            position: absolute;
+            left: 50%;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            z-index: 10;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="num">12</div>
+        <div class="num">1</div>
+        <div class="num">2</div>
+        <div class="num">3</div>
+        <div class="num">4</div>
+        <div class="num">5</div>
+        <div class="num">6</div>
+        <div class="num">7</div>
+        <div class="num">8</div>
+        <div class="num">9</div>
+        <div class="num">10</div>
+        <div class="num">11</div>
+        <div class="sec"></div>
+        <div class="minute"></div>
+        <div class="hour"></div>
+        <div class="dot"></div>
+    </div>
+</body>
+</html>
